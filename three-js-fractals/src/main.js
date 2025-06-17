@@ -2,9 +2,14 @@ import * as THREE from 'three';
 
 // Setup scene, camera, renderer
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+scene.background = new THREE.Color(0xffffff);
+const width = 800;
+const height = 600;
+const camera = new THREE.PerspectiveCamera(75, width/height, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(width, height);
+renderer.domElement.style.display = 'block';
+renderer.domElement.style.margin = '0 auto';
 document.body.appendChild(renderer.domElement);
 
 // Recursive function to add pyramids
